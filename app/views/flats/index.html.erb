@@ -1,0 +1,22 @@
+<div class="container">
+  <p class="fs-1 ">All our Flats (<%= @flats.count %>)</p>
+  <div class="d-flex flex-row align-items-start justify-content-between">
+    <% @flats.each do |flat| %>
+      <div class="card bd-highlight shadow-sm" style="width: 300px;">
+        <div class="info p-4">
+          <h3 class="card-title"><%= flat.name %></h3>
+          <p class="card-text"><%= flat.address %></p>
+          <div class="guests-price">
+            <i class="fas fa-user-friends"></i> <%= flat.number_of_guests %>
+            <i class="fas fa-dollar-sign ms-3"></i> <%= number_with_delimiter(flat.price_per_night, :delimiter => '.') %>
+          </div>
+        </div>
+        <div class="card-body border-top pb-1 style="background-color="white";">
+          <p><%= link_to "More info", flat_path(flat), class: "text-decoration-none"%></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

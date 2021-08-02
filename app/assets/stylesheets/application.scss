@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'header';
+@import 'cards';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
