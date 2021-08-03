@@ -1,8 +1,8 @@
 <div class="container">
   <p class="fs-1 ">All our Flats (<%= @flats.count %>)</p>
-  <div class="d-flex flex-row align-items-start justify-content-between">
+  <div class="cards">
     <% @flats.each do |flat| %>
-      <div class="card bd-highlight shadow-sm" style="width: 300px;">
+      <div class="card shadow-sm">
         <div class="info p-4">
           <h3 class="card-title"><%= flat.name %></h3>
           <p class="card-text"><%= flat.address %></p>
@@ -12,7 +12,10 @@
           </div>
         </div>
         <div class="card-body border-top pb-1 style="background-color="white";">
-          <p><%= link_to "More info", flat_path(flat), class: "text-decoration-none"%></p>
+          <p><%= link_to "More info", flat_path(flat), class: "text-decoration-none"%>
+          <%= link_to "Edit ", edit_flat_path(flat), class:"ms-3 text-warning text-decoration-none" %>
+          <%= link_to "Remove", flat_path(flat.id), method: :delete, data: { confirm: "Are you sure to delete this flat?" }, class:"ms-3 text-danger text-decoration-none" %>
+          </p>
         </div>
       </div>
     <% end %>
