@@ -1,0 +1,54 @@
+<div class="flat-pic" style="background-image: url('https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=80')"></div>
+<div class ="container neg-top">
+  <div class="row">
+    <div class="col-8">
+      <div class="info-card shadow-sm rounded">
+        <div class="card-body">
+          <h1 class="card-title"><%= @flat.name %></h1>
+          <p class="card-text"><%= @flat.address %></p>
+        </div>
+      </div>
+      <div class="info-card shadow-sm rounded">
+        <div class="card-body">
+          <h3 class="card-title">A bit more about this flat...</h3>
+          <p class="card-text"><%= @flat.description %></p>
+          <div class="map" style="background-image: url('https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png')"></div>
+        </div>
+      </div>
+      <div class="info-card shadow-sm rounded">
+        <div class="card-body">
+          <h3>Details</h3>
+          <i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %>
+          <i class="fas fa-dollar-sign ms-3"></i> <%= number_with_delimiter(@flat.price_per_night, :delimiter => '.') %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-card shadow-sm rounded">
+        <h3>Book this place!</h3>
+        <div class="input-group mb-2">
+          <div class="input-group-text">From</div>
+          <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="02-08-2021">
+        </div>
+        <div class="input-group mb-2">
+          <div class="input-group-text">To</div>
+          <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="02-08-2021">
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="button">Book</button>
+        </div>
+      </div>
+      <div class="rrss-card shadow-sm rounded">
+        <div class="d-flex align-items-center justify-content-between">
+          <h6 class="mb-0">Share</h6>
+          <div class="d-flex">
+            <i class="fab fa-facebook-square fa-2x me-2"></i>
+            <i class="fab fa-twitter-square fa-2x me-2"></i>
+            <i class="fab fa-pinterest-square fa-2x me-2"></i>
+            <i class="fas fa-envelope-square fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
